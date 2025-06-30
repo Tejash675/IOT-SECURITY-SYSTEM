@@ -34,3 +34,5 @@ In this setup:
 The Arduino reads the analog value from the LDR. If the light level is above a certain threshold, it turns on the **orange LED**, indicating normal conditions. If the light level falls below the threshold, the **red LED** turns on, acting as a warning or alert.
 
 This project is a simple example of how IoT systems can monitor environments and respond to changes. It shows how basic sensors and microcontrollers can create useful security systems. The use of Tinkercad makes the development and testing process easier and accessible to students and beginners. This system can be further enhanced by adding Wi-Fi modules or alarms for real-time alerts.
+
+![Image](https://github.com/user-attachments/assets/76e78ad3-9c6f-42e3-a6bd-0a5a9b1be7d4)
