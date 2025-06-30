@@ -1,0 +1,35 @@
+// Pin definitions
+const int ldrPin = A0;       // LDR connected to analog pin A0
+const int redLed = 7;        // Red LED connected to digital pin 7
+const int orangeLed = 8;     // Orange LED connected to digital pin 8
+
+// Threshold value for detecting low light (you can adjust this)
+const int threshold = 500;
+
+void setup() {
+  // Set LED pins as output
+  pinMode(redLed, OUTPUT);
+  pinMode(orangeLed, OUTPUT);
+  
+  // Initialize serial monitor (for testing/debugging)
+  Serial.begin(9600);
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin);  // Read light intensity from LDR
+
+  // Print LDR value to Serial Monitor
+  Serial.println(ldrValue);
+
+  if (ldrValue < threshold) {
+    // Low light detected - turn on red LED (alert)
+    digitalWrite(redLed, HIGH);
+    digitalWrite(orangeLed, LOW);
+  } else {
+    // Normal light - turn on orange LED
+    digitalWrite(redLed, LOW);
+    digitalWrite(orangeLed, HIGH);
+  }
+
+  delay(200);  // Small delay to avoid rapid switching
+}
